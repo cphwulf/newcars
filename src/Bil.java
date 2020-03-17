@@ -34,4 +34,11 @@ public class Bil {
     public int getMpgCity() {
         return mpgCity;
     }
+
+    public String bilToCsv() {
+        String msg = "";
+        msg = msg + model + "," + make;
+        return msg;
+    }
+
 }
