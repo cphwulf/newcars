@@ -7,6 +7,11 @@ public class Bil {
     int horsePower;
     int mpgCity;
 
+    public Bil(String make, String model) {
+        this.make = make;
+        this.model=model;
+    }
+
     public Bil(String make, String model, int horsepower, int mpgCity) {
         this.model = model;
         this.make = make;
