@@ -24,7 +24,7 @@ public class ImportCarsFromFile {
                 tmpBil = new Bil(lineArr[0],lineArr[1]);
                 garage.addCar(tmpBil);
                 //System.out.println("Make: "+ lineArr[0]+ " Model: " + lineArr[1]);
-                System.out.println("Makke: " + tmpBil.getMake() + " Model: " + tmpBil.getModel());
+                System.out.println("Make: " + tmpBil.getMake() + " Model: " + tmpBil.getModel());
             }
         } else {
             throw new FileNotFoundException();

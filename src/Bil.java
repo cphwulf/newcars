@@ -1,15 +1,23 @@
+import Util.IdFactory;
 public class Bil {
     //Make;Model;Horsepower;MPG_City
     //Acura;MDX;265;17
     //Audi;A4 3.0 4dr;220;20
+    static int regId=0;
     String make;
     String model;
     int horsePower;
     int mpgCity;
+    String regNr;
 
     public Bil(String make, String model) {
         this.make = make;
         this.model=model;
+        //this.doRegId();
+        //this.regNr = IdFactory.getRegNr();
+        //IdFactory idFactory = new IdFactory();
+        IdFactory idFactory = IdFactory.getInstance();
+        this.regNr = idFactory.getDynRegNr();
     }
 
     public Bil(String make, String model, int horsepower, int mpgCity) {
@@ -17,6 +25,13 @@ public class Bil {
         this.make = make;
         this.horsePower=horsepower;
         this.mpgCity=mpgCity;
+        this.doRegId();
+    }
+
+    public void doRegId() {
+        String regNr = "";
+        regId++;
+        this.regNr = "AB" + regId;
     }
 
     public String getMake() {
@@ -37,7 +52,7 @@ public class Bil {
 
     public String bilToCsv() {
         String msg = "";
-        msg = msg + model + "," + make;
+        msg = msg + model + "," + make + "," + regNr;
         return msg;
     }
 
